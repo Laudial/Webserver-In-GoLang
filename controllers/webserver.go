@@ -10,13 +10,6 @@ import (
 	"sync"
 )
 
-// Couleurs pour les messages de démarrage et d'arrêt du serveur web
-const (
-	colorReset = "\033[0m"
-	colorGreen = "\033[32m"
-	colorRed   = "\033[31m"
-)
-
 // StartServer initialise et démarre le serveur HTTP.
 func StartMainServer() {
 	var wg sync.WaitGroup
@@ -50,14 +43,14 @@ func waitForTermination(port string, wg *sync.WaitGroup) {
 	// Décrémenter le WaitGroup lorsque la goroutine se termine
 	defer wg.Done()
 
-	fmt.Println(colorGreen + "Le serveur web est maintenant en ligne sur le port", port ,"\nAppuyez sur Ctrl+C pour arrêter" + colorReset)
+	fmt.Println("\033[32m" + "Le serveur web est maintenant en ligne sur le port", port ,"\nAppuyez sur Ctrl+C pour arrêter" + "\033[0m")
 
 	// Créer un canal pour recevoir les signaux d'arrêt
 	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, syscall.SIGINT, syscall.SIGTERM)
 	<-stop
 
-	fmt.Println(colorRed + "\nArrêt du serveur web..." + colorReset)
+	fmt.Println("\033[31m" + "\nArrêt du serveur web..." + "\033[0m")
 
 	os.Exit(0)
 }
