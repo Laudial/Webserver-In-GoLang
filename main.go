@@ -1,8 +1,8 @@
 package main
 
 import (
-	"SensiCortex/controllers"
-	"SensiCortex/utils"
+	"webserver/controllers"
+	"webserver/utils"
 )
 
 func main() {
