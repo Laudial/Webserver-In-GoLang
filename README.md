@@ -1,5 +1,5 @@
 # Webserver en Goland
-[![Go Version](https://img.shields.io/badge/Go-1.21.5-blue.svg)](https://golang.org/)
+[![Go Reference](https://pkg.go.dev/badge/golang.org/x/example.svg)](https://pkg.go.dev/golang.org/x/example)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
